@@ -17,10 +17,8 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 8
+      - name: Use pnpm
+        run: corepack enable pnpm && pnpm --version
 
       - name: Set node
         uses: actions/setup-node@v3
@@ -57,10 +55,8 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 8
+      - name: Use pnpm
+        run: corepack enable pnpm && pnpm --version
 
       - name: Set node version to ${{ matrix.node_version }}
         uses: actions/setup-node@v3

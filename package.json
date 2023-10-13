@@ -2,6 +2,8 @@
 	"name": "css-gradient-parser",
 	"version": "0.0.1",
 	"description": "a css gradient parser",
+	"packageManager": "pnpm@8.7.0",
+	"license": "MIT",
 	"main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.mts",
