@@ -1,0 +1,79 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [synchronize, opened, reopened]
+
+jobs:
+  linux18:
+    runs-on: ubuntu-latest
+    name: Node 18 + Coverage (Linux)
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
+      - name: Set node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: "pnpm"
+
+      - name: Install deps
+        run: pnpm install
+      
+      - name: Test with coverage
+        run: pnpm coverage
+
+      - uses: codecov/codecov-action@v3
+        with:
+          commit_parent: ${{ github.event.pull_request.head.sha }}
+      
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node_version: [16, 18, 20]
+        include:
+          - os: macos-latest
+            node_version: 18
+          - os: windows-latest
+            node_version: 18
+      fail-fast: false
+    name: "Build: node-${{ matrix.node_version }}, ${{ matrix.os }}"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
+      - name: Set node version to ${{ matrix.node_version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node_version }}
+          cache: "pnpm"
+
+      - name: Install deps
+        run: pnpm install
+
+      - name: Build
+        run: pnpm build
+      
+      - name: Test
+        run: pnpm test
+      
