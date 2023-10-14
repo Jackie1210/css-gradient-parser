@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.13
+
+[compare changes](https://github.com/Jackie1210/css-gradient-parser/compare/v0.0.12...v0.0.13)
+
+### 🩹 Fixes
+
+- Bug ([5d33a58](https://github.com/Jackie1210/css-gradient-parser/commit/5d33a58))
+
+### ❤️ Contributors
+
+- Lynn <jcignorance@outlook.com>
+
 ## v0.0.12
 
 [compare changes](https://github.com/Jackie1210/css-gradient-parser/compare/v0.0.11...v0.0.12)
