@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.3
+
+[compare changes](https://github.com/Jackie1210/css-gradient-parser/compare/v0.0.2...v0.0.3)
+
+### 🩹 Fixes
+
+- Export radial ([71d3121](https://github.com/Jackie1210/css-gradient-parser/commit/71d3121))
+
+### ❤️ Contributors
+
+- Lynn <jcignorance@outlook.com>
+
 ## v0.0.2
 
 
