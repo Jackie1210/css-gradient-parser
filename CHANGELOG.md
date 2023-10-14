@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.9
+
+[compare changes](https://github.com/Jackie1210/css-gradient-parser/compare/v0.0.8...v0.0.9)
+
+### 💅 Refactors
+
+- Radial result ([1190517](https://github.com/Jackie1210/css-gradient-parser/commit/1190517))
+
+### ❤️ Contributors
+
+- Lynn <jcignorance@outlook.com>
+
 ## v0.0.8
 
 [compare changes](https://github.com/Jackie1210/css-gradient-parser/compare/v0.0.7...v0.0.8)
