@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.15
+
+[compare changes](https://github.com/Jackie1210/css-gradient-parser/compare/v0.0.14...v0.0.15)
+
+### 🏡 Chore
+
+- Export RadialPropertyValue ([e097eee](https://github.com/Jackie1210/css-gradient-parser/commit/e097eee))
+
+### ❤️ Contributors
+
+- Lynn <jcignorance@outlook.com>
+
 ## v0.0.14
 
 [compare changes](https://github.com/Jackie1210/css-gradient-parser/compare/v0.0.13...v0.0.14)
