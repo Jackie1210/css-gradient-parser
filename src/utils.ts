@@ -36,14 +36,14 @@ export function resolveStops(v: string[]): ColorStop[] {
     if (isHint(v[i + 1])) {
       stops.push({
         color,
-        offset: resolveOffset(offset),
-        hint: resolveOffset(v[i + 1])
+        offset: resolveLength(offset),
+        hint: resolveLength(v[i + 1])
       })
       i += 2
     } else {
       stops.push({
         color,
-        offset: resolveOffset(offset)
+        offset: resolveLength(offset)
       })
       i++
     }
@@ -58,10 +58,10 @@ function isHint(v: string) {
   return REGEX.test(v)
 }
 
-function resolveOffset(offset?: string) {
-  if (!offset) return undefined
+export function resolveLength(v?: string) {
+  if (!v) return undefined
 
-  const [, value, unit] = offset.trim().match(REGEX) || []
+  const [, value, unit] = v.trim().match(REGEX) || []
 
   return { value, unit }
 }

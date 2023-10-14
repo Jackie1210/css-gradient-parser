@@ -19,7 +19,7 @@ describe('linear', () => {
     const res = parseLinearGradient('linear-gradient(45deg, rgba(0, 0, 0, 0), red)')
 
     expect(res).toEqual({
-      orientation: { type: 'angular', value: '45deg' },
+      orientation: { type: 'angular', value: { unit: 'deg', value: '45' } },
       repeating: false,
       stops: [
         { color: 'rgba(0, 0, 0, 0)', offset: undefined },
@@ -32,7 +32,7 @@ describe('linear', () => {
     const res = parseLinearGradient('linear-gradient(0.25turn, rgba(0, 0, 0, 0) 10%, red 30%)')
 
     expect(res).toEqual({
-      orientation: { type: 'angular', value: '0.25turn' },
+      orientation: { type: 'angular', value: { unit: 'turn', value: '0.25' } },
       repeating: false,
       stops: [
         { color: 'rgba(0, 0, 0, 0)', offset: { unit: '%', value: '10' }},

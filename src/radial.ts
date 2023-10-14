@@ -124,5 +124,6 @@ export function parseRadialGradient(input: string): RadialResult {
 }
 
 function isColor(v: string) {
-  return /^rgba?|hwb|hsl|lab|lch|oklab|color|#/.test(v)
+  if (/(circle|ellipse)/.test(v)) return false
+  return /^(rgba?|hwb|hsl|lab|lch|oklab|color|#|[a-zA-Z]+)/.test(v)
 }

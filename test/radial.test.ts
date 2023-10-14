@@ -145,4 +145,23 @@ describe('radial', () => {
       ]
     })
   })
+
+  it('should parse pure value', () => {
+    const g = parseRadialGradient('radial-gradient(blue, red)')
+
+    expect(g).toEqual({
+      shape: 'ellipse',
+      repeating: false,
+      position: {
+        x: { type: 'keyword', value: 'center' },
+        y: { type: 'keyword', value: 'center' },
+      },
+      size: [{ type: 'keyword', value: 'farthest-corner'}],
+      stops: [
+        { color: 'blue', offset: undefined },
+        { color: 'red', offset: undefined }
+      ]
+    })
+
+  })
 })

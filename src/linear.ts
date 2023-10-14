@@ -1,9 +1,12 @@
-import { split, resolveStops } from "./utils.js"
+import { split, resolveStops,resolveLength } from "./utils.js"
 import { ColorStop } from './type.js'
 
-interface LinearOrientation {
-  type: 'directional' | 'angular'
+type LinearOrientation = {
+  type: 'directional'
   value: string
+} | {
+  type: 'angular'
+  value: { unit: string; value: string }
 }
 
 export interface LinearResult {
@@ -40,10 +43,10 @@ function resolveLinearOrientation(angle: string): LinearOrientation {
     }
   }
 
-  if (['turn', 'deg'].some(unit => angle.endsWith(unit))) {
+  if (['turn', 'deg', 'grad', 'rad'].some(unit => angle.endsWith(unit))) {
     return {
       type: 'angular',
-      value: angle
+      value: resolveLength(angle)
     }
   }
 
