@@ -5,8 +5,8 @@
   "packageManager": "pnpm@8.7.0",
   "license": "MIT",
   "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.mts",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "type": "module",
   "files": [
     "dist"
@@ -23,8 +23,8 @@
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     }
   },
   "simple-git-hooks": {
