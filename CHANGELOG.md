@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.5
+
+[compare changes](https://github.com/Jackie1210/css-gradient-parser/compare/v0.0.4...v0.0.5)
+
+### 🚀 Enhancements
+
+- Support conic gradient ([6ac56a5](https://github.com/Jackie1210/css-gradient-parser/commit/6ac56a5))
+
+### 🩹 Fixes
+
+- Typo ([fe3aa3d](https://github.com/Jackie1210/css-gradient-parser/commit/fe3aa3d))
+
+### ❤️ Contributors
+
+- Lynn <jcignorance@outlook.com>
+
 ## v0.0.4
 
 [compare changes](https://github.com/Jackie1210/css-gradient-parser/compare/v0.0.3...v0.0.4)
