@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.4
+
+[compare changes](https://github.com/Jackie1210/css-gradient-parser/compare/v0.0.3...v0.0.4)
+
+### 🚀 Enhancements
+
+- Support repeating-* ([1197d2f](https://github.com/Jackie1210/css-gradient-parser/commit/1197d2f))
+
+### ❤️ Contributors
+
+- Lynn <jcignorance@outlook.com>
+
 ## v0.0.3
 
 [compare changes](https://github.com/Jackie1210/css-gradient-parser/compare/v0.0.2...v0.0.3)
