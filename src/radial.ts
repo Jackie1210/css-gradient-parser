@@ -2,7 +2,7 @@ import { resolveStops, split } from './utils'
 
 export type RgExtentKeyword = 'closest-corner' | 'closest-side' | 'farthest-corner' | 'farthest-side'
 
-export interface RadiusResult {
+export interface RadialResult {
   shape: 'circle' | 'ellipse'
   repeating: boolean
   size: string
@@ -14,11 +14,11 @@ export interface RadiusResult {
   }>
 }
 
-export function parseRadialGradient(input: string): RadiusResult {
+export function parseRadialGradient(input: string): RadialResult {
   if (!/(repeating-)?radial-gradient/.test(input)) throw new SyntaxError(`could not find syntax for this item: ${input}`)
   
   const [, repeating, props] = input.match(/(repeating-)?radial-gradient\((.+)\)/)
-  const result: RadiusResult = {
+  const result: RadialResult = {
     shape: 'ellipse',
     repeating: Boolean(repeating),
     size: 'farthest-corner',

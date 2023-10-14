@@ -24,7 +24,7 @@ interface LinearResult {
 
 ### `parseRadialGradient`
 ```ts
-interface RadiusResult {
+interface RadialResult {
   shape: 'circle' | 'ellipse'
   size: string
   repeating: boolean
