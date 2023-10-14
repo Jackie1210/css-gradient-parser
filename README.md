@@ -37,12 +37,36 @@ interface RadialResult {
 }
 ```
 
+### `parseConicGradient`
+```ts
+type RectColorSpace = 'srgb' | 'srgb-linear' | 'lab' | 'oklab' | 'xyz' | 'xyz-d50' | 'xyz-d65'
+type PolarColorSpace = 'hsl' | 'hwb' | 'lch' | 'oklch'
+type HueInterpolationMethod = `${'shorter' | 'longer' | 'increasing' | 'decreasing'} hue`
+
+interface ConicGradient {
+  angle: string
+  repeating: boolean
+  position: string
+  color?: Color
+  stops: Array<{
+    color: string
+    offset: string
+    hint?: string
+  }>
+}
+
+type Color = {
+  space: RectColorSpace | PolarColorSpace
+  method?: HueInterpolationMethod
+}
+```
+
 - [x] linear-gradient
 - [x] radial-gradient
-- [ ] conic-gradient
+- [x] conic-gradient
 - [x] repeating-linear-gradient
 - [x] repeating-radial-gradient
-- [ ] repeating-conic-gradient
+- [x] repeating-conic-gradient
 
 
 ## LICENSE
