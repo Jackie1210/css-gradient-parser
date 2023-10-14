@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.6
+
+[compare changes](https://github.com/Jackie1210/css-gradient-parser/compare/v0.0.5...v0.0.6)
+
+### 🚀 Enhancements
+
+- Add ColorStop type ([2416daa](https://github.com/Jackie1210/css-gradient-parser/commit/2416daa))
+
+### ❤️ Contributors
+
+- Lynn <jcignorance@outlook.com>
+
 ## v0.0.5
 
 [compare changes](https://github.com/Jackie1210/css-gradient-parser/compare/v0.0.4...v0.0.5)
