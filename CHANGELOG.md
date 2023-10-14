@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.11
+
+[compare changes](https://github.com/Jackie1210/css-gradient-parser/compare/v0.0.10...v0.0.11)
+
+### 🩹 Fixes
+
+- Shoudl parse negative value ([21a7d6a](https://github.com/Jackie1210/css-gradient-parser/commit/21a7d6a))
+
+### ❤️ Contributors
+
+- Lynn <jcignorance@outlook.com>
+
 ## v0.0.10
 
 [compare changes](https://github.com/Jackie1210/css-gradient-parser/compare/v0.0.9...v0.0.10)
