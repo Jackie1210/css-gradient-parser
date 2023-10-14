@@ -1,4 +1,5 @@
 import { resolveStops, split } from './utils'
+import { ColorStop } from './type'
 
 export type RgExtentKeyword = 'closest-corner' | 'closest-side' | 'farthest-corner' | 'farthest-side'
 
@@ -7,11 +8,7 @@ export interface RadialResult {
   repeating: boolean
   size: string
   position: string
-  stops: Array<{
-    color: string
-    offset: string
-    hint?: string
-  }>
+  stops: ColorStop[]
 }
 
 export function parseRadialGradient(input: string): RadialResult {

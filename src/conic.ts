@@ -1,4 +1,5 @@
 import { resolveStops, split } from "./utils"
+import { ColorStop } from './type'
 
 type RectColorSpace = 'srgb' | 'srgb-linear' | 'lab' | 'oklab' | 'xyz' | 'xyz-d50' | 'xyz-d65'
 type PolarColorSpace = 'hsl' | 'hwb' | 'lch' | 'oklch'
@@ -9,11 +10,7 @@ interface ConicGradient {
   repeating: boolean
   position: string
   color?: Color
-  stops: Array<{
-    color: string
-    offset: string
-    hint?: string
-  }>
+  stops: ColorStop[]
 }
 
 type Color = {

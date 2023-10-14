@@ -1,4 +1,5 @@
 import { split, resolveStops } from "./utils"
+import { ColorStop } from './type'
 
 interface LinearOrientation {
   type: 'directional' | 'angular'
@@ -8,11 +9,7 @@ interface LinearOrientation {
 export interface LinearResult {
   orientation: LinearOrientation
   repeating: boolean
-  stops: Array<{
-    color: string
-    offset: string
-    hint?: string
-  }>
+  stops: ColorStop[]
 }
 
 export function parseLinearGradient(input: string): LinearResult {
