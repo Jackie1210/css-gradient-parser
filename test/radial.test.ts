@@ -11,12 +11,13 @@ describe('radial', () => {
     const g6 = parseRadialGradient('radial-gradient(#333, #eee 80%)')
     const g7 = parseRadialGradient('repeating-radial-gradient(#333, #eee 80%)')
     const g8 = parseRadialGradient('radial-gradient(ellipse 10px 30px at 10px 20px, #333, #eee 80%)')
+    const g9 = parseRadialGradient('radial-gradient(at 3% 42%, rgb(228, 105, 236) 0px, transparent 50%)')
 
     expect(g1).toEqual({
       shape: 'circle',
       repeating: false,
       position: {
-        x: { type: 'length', value: '100%' },
+        x: { type: 'length', value: { unit: '%', value: '100' } },
         y: { type: 'keyword', value: 'center' }
       },
       size: [{ type: 'keyword', value: 'farthest-corner'}],
@@ -30,10 +31,10 @@ describe('radial', () => {
       shape: 'circle',
       repeating: false,
       position: {
-        x: { type: 'length', value: '10px' },
-        y: { type: 'length', value: '20px' }
+        x: { type: 'length', value: { unit: 'px', value: '10' } },
+        y: { type: 'length', value: { unit: 'px', value: '20' } }
       },
-      size: [{ type: 'length', value: '20px'}],
+      size: [{ type: 'length', value: { unit: 'px', value: '20' } }],
       stops: [
         { color: '#333', offset: undefined },
         { color: '#eee', offset: { unit: '%', value: '80' } }
@@ -44,8 +45,8 @@ describe('radial', () => {
       shape: 'circle',
       repeating: false,
       position: {
-        x: { type: 'length', value: '10px' },
-        y: { type: 'length', value: '20px' }
+        x: { type: 'length', value: { unit: 'px', value: '10' } },
+        y: { type: 'length', value: { unit: 'px', value: '20' } }
       },
       size: [{ type: 'keyword', value: 'closest-corner'}],
       stops: [
@@ -75,7 +76,7 @@ describe('radial', () => {
         x: { type: 'keyword', value: 'center' },
         y: { type: 'keyword', value: 'center' },
       },
-      size: [{ type: 'length', value: '10vw'}],
+      size: [{ type: 'length', value: { unit: 'vw', value: '10' }}],
       stops: [
         { color: '#333', offset: undefined },
         { color: '#eee', offset: { unit: '%', value: '80' } }
@@ -114,16 +115,30 @@ describe('radial', () => {
       shape: 'ellipse',
       repeating: false,
       position: {
-        x: { type: 'length', value: '10px' },
-        y: { type: 'length', value: '20px' },
+        x: { type: 'length', value: { unit: 'px', value: '10' } },
+        y: { type: 'length', value: { unit: 'px', value: '20' } }
       },
       size: [
-        { type: 'length', value: '10px' },
-        { type: 'length', value: '30px' }
+        { type: 'length', value: { unit: 'px', value: '10' } },
+        { type: 'length', value: { unit: 'px', value: '30' } },
       ],
       stops: [
         { color: '#333', offset: undefined },
         { color: '#eee', offset: { unit: '%', value: '80' } }
+      ]
+    })
+
+    expect(g9).toEqual({
+      shape: 'ellipse',
+      repeating: false,
+      position: {
+        x: { type: 'length', value: { unit: '%', value: '3' } },
+        y: { type: 'length', value: { unit: '%', value: '42' } }
+      },
+      size: [{ type: 'keyword', value: 'farthest-corner'}],
+      stops: [
+        { color: 'rgb(228, 105, 236)', offset: { unit: 'px', value: '0' } },
+        { color: 'transparent', offset: { unit: '%', value: '50' } }
       ]
     })
   })
@@ -138,7 +153,7 @@ describe('radial', () => {
         x: { type: 'keyword', value: 'center' },
         y: { type: 'keyword', value: 'center' },
       },
-      size: [{ type: 'length', value: '-20px'}],
+      size: [{ type: 'length', value: { unit: 'px', value: '-20' } }],
       stops: [
         { color: '#333', offset: undefined },
         { color: '#eee', offset: { unit: '%', value: '80' } }

@@ -1,20 +1,23 @@
-import { resolveStops, split } from './utils.js'
+import { resolveStops, split, resolveLength } from './utils.js'
 import { ColorStop } from './type.js'
 
 export type RgExtentKeyword = 'closest-corner' | 'closest-side' | 'farthest-corner' | 'farthest-side'
 
-type ValueType = 'keyword' | 'length'
+type ValueType = {
+  type: 'keyword'
+  value: string
+} | {
+  type: 'length'
+  value: { unit: string; value: string }
+}
 
 export interface RadialResult {
   shape: 'circle' | 'ellipse'
   repeating: boolean
-  size: {
-    type: ValueType
-    value: string
-  }[]
+  size: ValueType[]
   position: {
-    x: { type: ValueType, value: string }
-    y: { type: ValueType, value: string }
+    x: ValueType
+    y: ValueType
   }
   stops: ColorStop[]
 }
@@ -100,20 +103,21 @@ export function parseRadialGradient(input: string): RadialResult {
     size.push('farthest-corner')
   }
 
-  result.size = size.map(v => ({
-    type: isRgExtentKeyword(v) ? 'keyword' : 'length',
-    value: v
-  })) as Array<{ type: 'keyword' | 'length'; value: string }>
+  result.size = size.map(v => {
+    if (isRgExtentKeyword(v)) {
+      return { type: 'keyword', value: v }
+    } else {
+      return { type: 'length', value: resolveLength(v) }
+    }
+  })
 
-  result.position.x = {
-    type: !position[0] || isPositionKeyWord(position[0]) ? 'keyword' : 'length',
-    value: position[0] || 'center'
-  } as { type: 'keyword' | 'length'; value: string }
+  result.position.x = isPositionKeyWord(position[0])
+  ?  { type: 'keyword', value: position[0] }
+  : { type: 'length', value: resolveLength(position[0]) }
 
-  result.position.y = {
-    type: isPositionKeyWord(position[1]) ? 'keyword' : 'length',
-    value: position[1]
-  } as { type: 'keyword' | 'length'; value: string }
+  result.position.y = isPositionKeyWord(position[1])
+    ?  { type: 'keyword', value: position[1] }
+    : { type: 'length', value: resolveLength(position[1]) }
 
   if (shape || size.length > 0 || prefix[1]) properties.shift()
 
@@ -124,6 +128,6 @@ export function parseRadialGradient(input: string): RadialResult {
 }
 
 function isColor(v: string) {
-  if (/(circle|ellipse)/.test(v)) return false
+  if (/(circle|ellipse|at)/.test(v)) return false
   return /^(rgba?|hwb|hsl|lab|lch|oklab|color|#|[a-zA-Z]+)/.test(v)
 }
