@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.7
+
+[compare changes](https://github.com/Jackie1210/css-gradient-parser/compare/v0.0.6...v0.0.7)
+
+### 🩹 Fixes
+
+- Default condition should be last one ([a3b0fa9](https://github.com/Jackie1210/css-gradient-parser/commit/a3b0fa9))
+
+### ❤️ Contributors
+
+- Lynn <jcignorance@outlook.com>
+
 ## v0.0.6
 
 [compare changes](https://github.com/Jackie1210/css-gradient-parser/compare/v0.0.5...v0.0.6)
