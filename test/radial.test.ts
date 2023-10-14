@@ -127,4 +127,22 @@ describe('radial', () => {
       ]
     })
   })
+
+  it('should parse negative radius', () => {
+    const g = parseRadialGradient('radial-gradient(circle -20px, #333, #eee 80%)')
+
+    expect(g).toEqual({
+      shape: 'circle',
+      repeating: false,
+      position: {
+        x: { type: 'keyword', value: 'center' },
+        y: { type: 'keyword', value: 'center' },
+      },
+      size: [{ type: 'length', value: '-20px'}],
+      stops: [
+        { color: '#333' },
+        { color: '#eee', offset: '80%' }
+      ]
+    })
+  })
 })
