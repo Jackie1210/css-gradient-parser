@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.12
+
+[compare changes](https://github.com/Jackie1210/css-gradient-parser/compare/v0.0.11...v0.0.12)
+
+### 🩹 Fixes
+
+- Change ColorStop structure ([5897471](https://github.com/Jackie1210/css-gradient-parser/commit/5897471))
+
+### ❤️ Contributors
+
+- Lynn <jcignorance@outlook.com>
+
 ## v0.0.11
 
 [compare changes](https://github.com/Jackie1210/css-gradient-parser/compare/v0.0.10...v0.0.11)
