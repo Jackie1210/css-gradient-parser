@@ -13,6 +13,7 @@ interface LinearOrientation {
 
 interface LinearResult {
   orientation: LinearOrientation
+  repeating: boolean
   stops: Array<{
     color: string
     offset: string
@@ -26,6 +27,7 @@ interface LinearResult {
 interface RadiusResult {
   shape: 'circle' | 'ellipse'
   size: string
+  repeating: boolean
   position: string
   stops: Array<{
     color: string
@@ -38,8 +40,8 @@ interface RadiusResult {
 - [x] linear-gradient
 - [x] radial-gradient
 - [ ] conic-gradient
-- [ ] repeating-linear-gradient
-- [ ] repeating-radial-gradient
+- [x] repeating-linear-gradient
+- [x] repeating-radial-gradient
 - [ ] repeating-conic-gradient
 
 

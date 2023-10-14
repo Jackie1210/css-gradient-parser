@@ -9,9 +9,11 @@ describe('radial', () => {
     const g4 = parseRadialGradient('radial-gradient(circle, #333, #eee 80%)')
     const g5 = parseRadialGradient('radial-gradient(circle 10vw, #333, #eee 80%)')
     const g6 = parseRadialGradient('radial-gradient(#333, #eee 80%)')
+    const g7 = parseRadialGradient('repeating-radial-gradient(#333, #eee 80%)')
 
     expect(g1).toEqual({
       shape: 'circle',
+      repeating: false,
       position: '100%',
       size: 'farthest-corner',
       stops: [
@@ -22,6 +24,7 @@ describe('radial', () => {
 
     expect(g2).toEqual({
       shape: 'circle',
+      repeating: false,
       position: '10px 20px',
       size: '20px',
       stops: [
@@ -32,6 +35,7 @@ describe('radial', () => {
 
     expect(g3).toEqual({
       shape: 'circle',
+      repeating: false,
       position: '10px 20px',
       size: 'closest-corner',
       stops: [
@@ -42,6 +46,7 @@ describe('radial', () => {
 
     expect(g4).toEqual({
       shape: 'circle',
+      repeating: false,
       position: 'center',
       size: 'farthest-corner',
       stops: [
@@ -52,6 +57,7 @@ describe('radial', () => {
 
     expect(g5).toEqual({
       shape: 'circle',
+      repeating: false,
       position: 'center',
       size: '10vw',
       stops: [
@@ -62,6 +68,18 @@ describe('radial', () => {
 
     expect(g6).toEqual({
       shape: 'ellipse',
+      repeating: false,
+      position: 'center',
+      size: 'farthest-corner',
+      stops: [
+        { color: '#333' },
+        { color: '#eee', offset: '80%' }
+      ]
+    })
+
+    expect(g7).toEqual({
+      shape: 'ellipse',
+      repeating: true,
       position: 'center',
       size: 'farthest-corner',
       stops: [

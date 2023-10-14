@@ -7,6 +7,7 @@ interface LinearOrientation {
 
 export interface LinearResult {
   orientation: LinearOrientation
+  repeating: boolean
   stops: Array<{
     color: string
     offset: string
@@ -15,11 +16,12 @@ export interface LinearResult {
 }
 
 export function parseLinearGradient(input: string): LinearResult {
-  if (!input.startsWith('linear-gradient(')) throw new SyntaxError(`unsupported input: ${input}`)
+  if (!/^(repeating-)?linear-gradient/.test(input)) throw new SyntaxError(`could not find syntax for this item: ${input}`)
 
-  let [,props] = input.match(/linear-gradient\((.+)\)/)
+  let [, repeating, props] = input.match(/(repeating-)?linear-gradient\((.+)\)/)
   const result: LinearResult = {
     orientation: { type: 'directional', value: 'bottom' },
+    repeating: Boolean(repeating),
     stops: []
   }
 

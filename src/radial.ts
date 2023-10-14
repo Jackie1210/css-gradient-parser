@@ -4,6 +4,7 @@ export type RgExtentKeyword = 'closest-corner' | 'closest-side' | 'farthest-corn
 
 export interface RadiusResult {
   shape: 'circle' | 'ellipse'
+  repeating: boolean
   size: string
   position: string
   stops: Array<{
@@ -14,16 +15,16 @@ export interface RadiusResult {
 }
 
 export function parseRadialGradient(input: string): RadiusResult {
-  if (!input.startsWith('radial-gradient(')) throw new SyntaxError(`unsupported input: ${input}`)
-
+  if (!/(repeating-)?radial-gradient/.test(input)) throw new SyntaxError(`could not find syntax for this item: ${input}`)
+  
+  const [, repeating, props] = input.match(/(repeating-)?radial-gradient\((.+)\)/)
   const result: RadiusResult = {
     shape: 'ellipse',
+    repeating: Boolean(repeating),
     size: 'farthest-corner',
     position: 'center',
     stops: []
   }
-
-  const [, props] = input.match(/radial-gradient\((.+)\)/)
 
   const properties = split(props)
   // handle like radial-gradient(rgba(0,0,0,0), #ee7621)
