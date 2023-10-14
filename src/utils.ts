@@ -1,3 +1,5 @@
+import { ColorStop } from "./type.js"
+
 export function split(
   input: string,
   separator: string | RegExp = ','
@@ -25,8 +27,8 @@ export function split(
   return result
 }
 
-export function resolveStops(v: string[]) {
-  const stops = []
+export function resolveStops(v: string[]): ColorStop[] {
+  const stops: ColorStop[] = []
 
   for (let i = 0, n = v.length; i < n;) {
     const [color, offset] = split(v[i], /\s+/)
@@ -34,14 +36,14 @@ export function resolveStops(v: string[]) {
     if (isHint(v[i + 1])) {
       stops.push({
         color,
-        offset,
-        hint: v[i + 1]
+        offset: resolveOffset(offset),
+        hint: resolveOffset(v[i + 1])
       })
       i += 2
     } else {
       stops.push({
         color,
-        offset
+        offset: resolveOffset(offset)
       })
       i++
     }
@@ -50,6 +52,16 @@ export function resolveStops(v: string[]) {
   return stops
 }
 
+const REGEX = /^(-?\d+\.?\d*)(%|vw|vh|px|em|rem|deg|rad|grad|turn)$/
+
 function isHint(v: string) {
-  return /^\d+\.?\d*(%|vw|vh|px|em|rem)?$/.test(v)
+  return REGEX.test(v)
+}
+
+function resolveOffset(offset?: string) {
+  if (!offset) return undefined
+
+  const [, value, unit] = offset.trim().match(REGEX) || []
+
+  return { value, unit }
 }

@@ -21,8 +21,8 @@ describe('radial', () => {
       },
       size: [{ type: 'keyword', value: 'farthest-corner'}],
       stops: [
-        { color: '#333' },
-        { color: '#eee', offset: '80%' }
+        { color: '#333', offset: undefined },
+        { color: '#eee', offset: { unit: '%', value: '80' } }
       ]
     })
 
@@ -35,8 +35,8 @@ describe('radial', () => {
       },
       size: [{ type: 'length', value: '20px'}],
       stops: [
-        { color: '#333' },
-        { color: '#eee', offset: '80%' }
+        { color: '#333', offset: undefined },
+        { color: '#eee', offset: { unit: '%', value: '80' } }
       ]
     })
 
@@ -49,8 +49,8 @@ describe('radial', () => {
       },
       size: [{ type: 'keyword', value: 'closest-corner'}],
       stops: [
-        { color: '#333' },
-        { color: '#eee', offset: '80%' }
+        { color: '#333', offset: undefined },
+        { color: '#eee', offset: { unit: '%', value: '80' } }
       ]
     })
 
@@ -63,8 +63,8 @@ describe('radial', () => {
       },
       size: [{ type: 'keyword', value: 'farthest-corner'}],
       stops: [
-        { color: '#333' },
-        { color: '#eee', offset: '80%' }
+        { color: '#333', offset: undefined },
+        { color: '#eee', offset: { unit: '%', value: '80' } }
       ]
     })
 
@@ -77,8 +77,8 @@ describe('radial', () => {
       },
       size: [{ type: 'length', value: '10vw'}],
       stops: [
-        { color: '#333' },
-        { color: '#eee', offset: '80%' }
+        { color: '#333', offset: undefined },
+        { color: '#eee', offset: { unit: '%', value: '80' } }
       ]
     })
 
@@ -91,8 +91,8 @@ describe('radial', () => {
       },
       size: [{ type: 'keyword', value: 'farthest-corner'}],
       stops: [
-        { color: '#333' },
-        { color: '#eee', offset: '80%' }
+        { color: '#333', offset: undefined },
+        { color: '#eee', offset: { unit: '%', value: '80' } }
       ]
     })
 
@@ -105,8 +105,8 @@ describe('radial', () => {
       },
       size: [{ type: 'keyword', value: 'farthest-corner'}],
       stops: [
-        { color: '#333' },
-        { color: '#eee', offset: '80%' }
+        { color: '#333', offset: undefined },
+        { color: '#eee', offset: { unit: '%', value: '80' } }
       ]
     })
 
@@ -122,8 +122,8 @@ describe('radial', () => {
         { type: 'length', value: '30px' }
       ],
       stops: [
-        { color: '#333' },
-        { color: '#eee', offset: '80%' }
+        { color: '#333', offset: undefined },
+        { color: '#eee', offset: { unit: '%', value: '80' } }
       ]
     })
   })
@@ -140,8 +140,8 @@ describe('radial', () => {
       },
       size: [{ type: 'length', value: '-20px'}],
       stops: [
-        { color: '#333' },
-        { color: '#eee', offset: '80%' }
+        { color: '#333', offset: undefined },
+        { color: '#eee', offset: { unit: '%', value: '80' } }
       ]
     })
   })

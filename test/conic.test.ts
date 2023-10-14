@@ -12,8 +12,8 @@ describe('conic', () => {
       position: '100% 30%',
       repeating: false,
       stops: [
-        { color: '#f06' },
-        { color: 'gold' }
+        { color: '#f06', offset: undefined },
+        { color: 'gold', offset: undefined }
       ]
     })
 
@@ -22,8 +22,8 @@ describe('conic', () => {
       position: 'center',
       repeating: false,
       stops: [
-        { color: 'white', offset: '-50%' },
-        { color: 'black', offset: '150%' }
+        { color: 'white', offset: { unit: '%', value: '-50' } },
+        { color: 'black', offset: { unit: '%', value: '150' } }
       ]
     })
 
@@ -32,8 +32,8 @@ describe('conic', () => {
       position: 'center',
       repeating: false,
       stops: [
-        { color: 'white', offset: '-50%' },
-        { color: 'transparent' }
+        { color: 'white', offset: { unit: '%', value: '-50' } },
+        { color: 'transparent', offset: undefined }
       ]
     })
   })
@@ -41,7 +41,7 @@ describe('conic', () => {
   it('should parse color space', () => {
     const g1 = parseConicGradient('conic-gradient(from 30deg at center in hsl shorter hue, hsl(0,0%,75%), hsl(0,0%,25%))')
     const g2 = parseConicGradient('conic-gradient(in hsl shorter hue from 30deg at center, hsl(0,0%,75%), hsl(0,0%,25%))')
-    const g3 = parseConicGradient('conic-gradient(in hsl from 30deg at center, hsl(0,0%,75%), hsl(0,0%,25%))')
+    const g3 = parseConicGradient('conic-gradient(in hsl from 30deg at center, hsl(0,0%,75%) 30deg, hsl(0,0%,25%))')
 
     expect(g1).toEqual({
       angle: '30deg',
@@ -52,8 +52,8 @@ describe('conic', () => {
         method: 'shorter hue'
       },
       stops: [
-        { color: 'hsl(0,0%,75%)' },
-        { color: 'hsl(0,0%,25%)' }
+        { color: 'hsl(0,0%,75%)', offset: undefined },
+        { color: 'hsl(0,0%,25%)', offset: undefined }
       ]
     })
 
@@ -66,8 +66,8 @@ describe('conic', () => {
         method: 'shorter hue'
       },
       stops: [
-        { color: 'hsl(0,0%,75%)' },
-        { color: 'hsl(0,0%,25%)' }
+        { color: 'hsl(0,0%,75%)', offset: undefined },
+        { color: 'hsl(0,0%,25%)', offset: undefined }
       ]
     })
 
@@ -79,8 +79,8 @@ describe('conic', () => {
         space: 'hsl'
       },
       stops: [
-        { color: 'hsl(0,0%,75%)' },
-        { color: 'hsl(0,0%,25%)' }
+        { color: 'hsl(0,0%,75%)', offset: { unit: 'deg', value: '30' } },
+        { color: 'hsl(0,0%,25%)', offset: undefined }
       ]
     })
   })

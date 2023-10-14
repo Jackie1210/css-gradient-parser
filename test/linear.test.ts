@@ -9,8 +9,8 @@ describe('linear', () => {
       orientation: { type: 'directional', value: 'top' },
       repeating: false,
       stops: [
-        { color: 'blue' },
-        { color: 'red' }
+        { color: 'blue', offset: undefined },
+        { color: 'red', offset: undefined }
       ]
     })
   })
@@ -22,8 +22,8 @@ describe('linear', () => {
       orientation: { type: 'angular', value: '45deg' },
       repeating: false,
       stops: [
-        { color: 'rgba(0, 0, 0, 0)' },
-        { color: 'red' }
+        { color: 'rgba(0, 0, 0, 0)', offset: undefined },
+        { color: 'red', offset: undefined }
       ]
     })
   })
@@ -35,8 +35,8 @@ describe('linear', () => {
       orientation: { type: 'angular', value: '0.25turn' },
       repeating: false,
       stops: [
-        { color: 'rgba(0, 0, 0, 0)', offset: '10%' },
-        { color: 'red', offset: '30%' }
+        { color: 'rgba(0, 0, 0, 0)', offset: { unit: '%', value: '10' }},
+        { color: 'red', offset: { unit: '%', value: '30' } }
       ]
     })
   })
@@ -48,8 +48,8 @@ describe('linear', () => {
       orientation: { type: 'directional', value: 'left bottom' },
       repeating: false,
       stops: [
-        { color: 'rgba(0, 0, 0, 0)', offset: '10%', hint: '20%' },
-        { color: 'red', offset: '30%' }
+        { color: 'rgba(0, 0, 0, 0)', offset: { unit: '%', value: '10' }, hint: { unit: '%', value: '20' } },
+        { color: 'red', offset: { unit: '%', value: '30' } }
       ]
     })
   })
@@ -61,8 +61,8 @@ describe('linear', () => {
       orientation: { type: 'directional', value: 'left bottom' },
       repeating: true,
       stops: [
-        { color: 'rgba(0, 0, 0, 0)', offset: '10%', hint: '20%' },
-        { color: 'red', offset: '30%' }
+        { color: 'rgba(0, 0, 0, 0)', offset: { unit: '%', value: '10' }, hint: { unit: '%', value: '20' } },
+        { color: 'red', offset: { unit: '%', value: '30' } }
       ]
     })
   })

@@ -14,11 +14,7 @@ interface LinearOrientation {
 interface LinearResult {
   orientation: LinearOrientation
   repeating: boolean
-  stops: Array<{
-    color: string
-    offset: string
-    hint?: string
-  }>
+  stops: ColorStop[]
 }
 ```
 
@@ -52,11 +48,7 @@ interface ConicGradient {
   repeating: boolean
   position: string
   color?: Color
-  stops: Array<{
-    color: string
-    offset: string
-    hint?: string
-  }>
+  stops: ColorStop[]
 }
 
 type Color = {
