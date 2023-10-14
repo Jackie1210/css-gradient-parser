@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { parseRadialGradient } from '@/radial'
+import { parseRadialGradient } from '@/radial.js'
 
 describe('radial', () => {
   it('should parse correctly', () => {

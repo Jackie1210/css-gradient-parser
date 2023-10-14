@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { split } from '@/utils'
+import { split } from '@/utils.js'
 
 describe('Utils', () => {
   it('should split effects', () => {

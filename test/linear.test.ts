@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { parseLinearGradient } from '@/linear'
+import { parseLinearGradient } from '@/linear.js'
 
 describe('linear', () => {
   it('should parse linear-gradient', () => {

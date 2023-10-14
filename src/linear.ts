@@ -1,5 +1,5 @@
-import { split, resolveStops } from "./utils"
-import { ColorStop } from './type'
+import { split, resolveStops } from "./utils.js"
+import { ColorStop } from './type.js'
 
 interface LinearOrientation {
   type: 'directional' | 'angular'

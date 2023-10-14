@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { parseConicGradient } from '@/conic'
+import { parseConicGradient } from '@/conic.js'
 
 describe('conic', () => {
   it('should parse conic correctly', () => {

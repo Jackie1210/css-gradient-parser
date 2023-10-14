@@ -1,5 +1,5 @@
-import { resolveStops, split } from "./utils"
-import { ColorStop } from './type'
+import { resolveStops, split } from "./utils.js"
+import { ColorStop } from './type.js'
 
 type RectColorSpace = 'srgb' | 'srgb-linear' | 'lab' | 'oklab' | 'xyz' | 'xyz-d50' | 'xyz-d65'
 type PolarColorSpace = 'hsl' | 'hwb' | 'lch' | 'oklch'

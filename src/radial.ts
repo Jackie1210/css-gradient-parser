@@ -1,5 +1,5 @@
-import { resolveStops, split } from './utils'
-import { ColorStop } from './type'
+import { resolveStops, split } from './utils.js'
+import { ColorStop } from './type.js'
 
 export type RgExtentKeyword = 'closest-corner' | 'closest-side' | 'farthest-corner' | 'farthest-side'
 
