@@ -24,16 +24,20 @@ interface LinearResult {
 
 ### `parseRadialGradient`
 ```ts
+type ValueType = 'keyword' | 'length'
+
 interface RadialResult {
   shape: 'circle' | 'ellipse'
-  size: string
   repeating: boolean
-  position: string
-  stops: Array<{
-    color: string
-    offset: string
-    hint?: string
-  }>
+  size: {
+    type: ValueType
+    value: string
+  }[]
+  position: {
+    x: { type: ValueType, value: string }
+    y: { type: ValueType, value: string }
+  }
+  stops: ColorStop[]
 }
 ```
 
