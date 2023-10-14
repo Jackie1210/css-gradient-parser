@@ -3,7 +3,7 @@ import { ColorStop } from './type.js'
 
 export type RgExtentKeyword = 'closest-corner' | 'closest-side' | 'farthest-corner' | 'farthest-side'
 
-type ValueType = {
+export type RadialPropertyValue = {
   type: 'keyword'
   value: string
 } | {
@@ -14,10 +14,10 @@ type ValueType = {
 export interface RadialResult {
   shape: 'circle' | 'ellipse'
   repeating: boolean
-  size: ValueType[]
+  size: RadialPropertyValue[]
   position: {
-    x: ValueType
-    y: ValueType
+    x: RadialPropertyValue
+    y: RadialPropertyValue
   }
   stops: ColorStop[]
 }
