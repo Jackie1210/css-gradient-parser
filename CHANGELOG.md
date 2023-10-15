@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.16
+
+[compare changes](https://github.com/Jackie1210/css-gradient-parser/compare/v0.0.15...v0.0.16)
+
+### 🩹 Fixes
+
+- Should handle more unit for rg-size ([58ef6e0](https://github.com/Jackie1210/css-gradient-parser/commit/58ef6e0))
+
+### ❤️ Contributors
+
+- Lynn <jcignorance@outlook.com>
+
 ## v0.0.15
 
 [compare changes](https://github.com/Jackie1210/css-gradient-parser/compare/v0.0.14...v0.0.15)
