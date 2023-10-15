@@ -86,7 +86,7 @@ export function parseRadialGradient(input: string): RadialResult {
   const prefix = properties[0].split('at').map(v => v.trim())
 
   const shape = ((prefix[0] || '').match(/(circle|ellipse)/) || [])[1]
-  const size: string[] = (prefix[0] || '').match(/(-?\d+\.?\d*(vw|vh|px|em|rem)?|closest-corner|closest-side|farthest-corner|farthest-side)/g) || []
+  const size: string[] = (prefix[0] || '').match(/(-?\d+\.?\d*(vw|vh|px|em|rem|%|rad|grad|turn|deg)?|closest-corner|closest-side|farthest-corner|farthest-side)/g) || []
   const position = extendPosition((prefix[1] || '').split(' '))
 
   if (!shape) {
