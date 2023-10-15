@@ -1,3 +1,8 @@
+<p>
+  <a href="https://npmjs.com/package/css-gradient-parser"><img src="https://img.shields.io/npm/v/css-gradient-parser?style=flat&color=rgba(238, 118, 33)" alt="npm version"></a>
+  <a href="https://npmjs.com/package/css-gradient-parser"><img src="https://img.shields.io/npm/dm/css-gradient-parser?style=flat&color=rgba(238, 118, 33)" alt="npm downloads"></a>
+</p>
+
 # css-gradient-parser
 
 This lib intends to give a parser for [satori](https://github.com/vercel/satori) so that we can handle more gradient features
