@@ -6,17 +6,17 @@ export function split(
 ): string[] {
   const result = []
   let l = 0
-  let parenCount = 0
+  let parentCount = 0
   separator = new RegExp(separator)
 
   for (let i = 0; i < input.length; i++) {
     if (input[i] === '(') {
-      parenCount++
+      parentCount++
     } else if (input[i] === ')') {
-      parenCount--
+      parentCount--
     }
 
-    if (parenCount === 0 && separator.test(input[i])) {
+    if (parentCount === 0 && separator.test(input[i])) {
       result.push(input.slice(l, i).trim())
       l = i + 1
     }
