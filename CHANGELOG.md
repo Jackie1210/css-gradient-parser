@@ -1,6 +1,35 @@
 # Changelog
 
 
+## v0.0.17
+
+[compare changes](https://github.com/Jackie1210/css-gradient-parser/compare/v0.0.16...v0.0.17)
+
+### 🚀 Enhancements
+
+- Supoort vmin/vmax/ch ([7e962e5](https://github.com/Jackie1210/css-gradient-parser/commit/7e962e5))
+
+### 🩹 Fixes
+
+- Typo ([4a0ffd4](https://github.com/Jackie1210/css-gradient-parser/commit/4a0ffd4))
+- Zero value should make sense ([5d0275e](https://github.com/Jackie1210/css-gradient-parser/commit/5d0275e))
+
+### 🏡 Chore
+
+- Add badge ([bc22c4f](https://github.com/Jackie1210/css-gradient-parser/commit/bc22c4f))
+- Update deps ([cc60bb9](https://github.com/Jackie1210/css-gradient-parser/commit/cc60bb9))
+- Update vitest ([25d33f1](https://github.com/Jackie1210/css-gradient-parser/commit/25d33f1))
+- Update tsup ([18e2ec8](https://github.com/Jackie1210/css-gradient-parser/commit/18e2ec8))
+- Update badge ([a814c1a](https://github.com/Jackie1210/css-gradient-parser/commit/a814c1a))
+
+### 🤖 CI
+
+- Remove node16 ([703a527](https://github.com/Jackie1210/css-gradient-parser/commit/703a527))
+
+### ❤️ Contributors
+
+- Lynn ([@Jackie1210](http://github.com/Jackie1210))
+
 ## v0.0.16
 
 [compare changes](https://github.com/Jackie1210/css-gradient-parser/compare/v0.0.15...v0.0.16)
