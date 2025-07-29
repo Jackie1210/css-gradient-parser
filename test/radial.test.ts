@@ -180,6 +180,56 @@ describe('radial', () => {
         { color: 'red', offset: undefined }
       ]
     })
+  })
 
+  it('should parse pure number', () => {
+    const g = parseRadialGradient('radial-gradient(circle at 0 50%, blue, red)')
+
+    expect(g).toEqual({
+      shape: 'circle',
+      repeating: false,
+      position: {
+        x: { type: 'length', value: {
+          value: "0", unit: 'px'
+        }},
+        y: { type: 'length', value: {
+          value: "50", unit: '%'
+        } },
+      },
+      size: [{ type: 'keyword', value: 'farthest-corner'}],
+      stops: [
+        { color: 'blue', offset: undefined },
+        { color: 'red', offset: undefined }
+      ]
+    })
+  })
+
+  it('should parse repeating-radial-gradient(black,black 30px,white 30px,white 60px)', () => {
+    const g = parseRadialGradient('repeating-radial-gradient(black,black 30px,white 30px,white 60px)')
+
+    expect(g).toEqual({
+      shape: 'ellipse',
+      repeating: true,
+      position: {
+        x: { type: 'keyword', value: 'center' },
+        y: { type: 'keyword', value: 'center' },
+      },
+      size: [{ type: 'keyword', value: 'farthest-corner'}],
+      stops: [
+        { color: 'black', offset: undefined },
+        { color: 'black', offset: {
+          unit: 'px',
+          value: '30'
+        } },
+        { color: 'white', offset: {
+          unit: 'px',
+          value: '30'
+        } },
+        { color: 'white', offset: {
+          unit: 'px',
+          value: '60'
+        } }
+      ]
+    })
   })
 })
