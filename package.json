@@ -1,6 +1,6 @@
 {
   "name": "css-gradient-parser",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "a css gradient parser",
   "packageManager": "pnpm@8.7.0",
   "license": "MIT",

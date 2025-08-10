@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.18
+
+[compare changes](https://github.com/Jackie1210/css-gradient-parser/compare/v0.0.17...v0.0.18)
+
+### 🩹 Fixes
+
+- Support hsla in radial ([f5dbd57](https://github.com/Jackie1210/css-gradient-parser/commit/f5dbd57))
+
+### ❤️ Contributors
+
+- Lynn ([@Jackie1210](http://github.com/Jackie1210))
+
 ## v0.0.17
 
 [compare changes](https://github.com/Jackie1210/css-gradient-parser/compare/v0.0.16...v0.0.17)
