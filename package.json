@@ -18,7 +18,7 @@
     "test": "vitest",
     "lint": "eslint . --ext .js,.jsx,.ts --quiet --cache",
     "lint:fix": "pnpm lint --fix",
-    "r": "pnpm build && changelogen --release --push && pnpm publish"
+    "r": "pnpm publish"
   },
   "exports": {
     "./package.json": "./package.json",
