@@ -4,9 +4,9 @@
   "description": "a css gradient parser",
   "packageManager": "pnpm@8.7.0",
   "license": "MIT",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.mts",
   "type": "module",
   "files": [
     "dist"
@@ -14,7 +14,7 @@
   "author": "Lynnnnnnxx<jcignorance@gmail.com>",
   "scripts": {
     "prepare": "simple-git-hooks",
-    "build": "tsup",
+    "build": "tsdown",
     "test": "vitest",
     "lint": "eslint . --ext .js,.jsx,.ts --quiet --cache",
     "lint:fix": "pnpm lint --fix",
@@ -23,7 +23,7 @@
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "import": "./dist/index.js",
+      "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     }
   },
@@ -36,18 +36,21 @@
     ]
   },
   "devDependencies": {
-    "@types/node": "^20.14.10",
-    "@typescript-eslint/eslint-plugin": "^7.15.0",
-    "@typescript-eslint/parser": "^7.15.0",
-    "@vitest/coverage-v8": "^2.0.2",
-    "changelogen": "^0.5.5",
-    "eslint": "^8.57.0",
-    "lint-staged": "^14.0.1",
-    "simple-git-hooks": "^2.11.1",
-    "tsup": "^8.5.0",
-    "tsx": "^3.14.0",
-    "typescript": "^5.5.3",
-    "vitest": "^2.0.2"
+    "@eslint/eslintrc": "^3.3.3",
+    "@eslint/js": "^9.39.2",
+    "@types/node": "^24",
+    "@typescript-eslint/eslint-plugin": "^8.50.0",
+    "@typescript-eslint/parser": "^8.50.0",
+    "@vitest/coverage-v8": "^4.0.16",
+    "changelogen": "^0.6.2",
+    "eslint": "^9.39.2",
+    "globals": "^16.5.0",
+    "lint-staged": "^16.2.7",
+    "simple-git-hooks": "^2.13.1",
+    "tsdown": "^0.18.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.16"
   },
   "engines": {
     "node": ">=16"
